@@ -9,13 +9,23 @@
 }
 
 :root {
-  --dark:  #132222;
-  --dark2: #1e3b40;
-  --gold:  #d5b07a;
-  --beige: #e3d7c5;
-  --light: #efeeec;
-  --text:  #f6f6f6;
-  --muted: #c7c7c7;
+  /* Core */
+  --dark:        #132222;
+  --dark2:       #1e3b40;
+  --gold:        #d5b07a;
+  --beige:       #e3d7c5;
+  --light:       #efeeec;
+  --text:        #f6f6f6;
+  --muted:       #c7c7c7;
+
+  /* Extended brand palette */
+  --navy:        #1a2e2f;   /* بني رمادي */
+  --slate:       #64706f;   /* رمادي */
+  --sage:        #5b6760;   /* أخضر رمادي */
+  --sand:        #9d9b8b;   /* اصفر رمادي */
+  --mint:        #d2dad3;   /* أخضر فاتح */
+  --cream:       #e3d7c5;   /* برتقالي فاتح */
+  --teal-dark:   #1e3b40;   /* تركواز داكن */
 }
 
 body {
@@ -556,4 +566,552 @@ footer {
     font-size: 36px;
   }
 
+}
+
+/* ========================= */
+/* Specialties Hub           */
+/* ========================= */
+
+.specialties-hub {
+  background: var(--light);
+  padding: 120px 0;
+}
+
+.specialty-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* Base card */
+.specialty-hub-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px;
+  padding: 44px 40px 36px;
+  text-decoration: none;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.specialty-hub-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 28px 64px rgba(0,0,0,0.14);
+}
+
+/* ─── Card 1: مكة — بني رمادي #1a2e2f ─── */
+.specialty-hub-card.card-makkah {
+  background: #1a2e2f;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-makkah .hub-card-label { color: #d5b07a; }
+.card-makkah h3              { color: #f0ede8; }
+.card-makkah p               { color: #9aaca8; }
+
+.card-makkah .hub-card-tags span {
+  background: rgba(213,176,122,0.13);
+  color: #d5b07a;
+  border: 1px solid rgba(213,176,122,0.22);
+}
+
+.card-makkah .hub-card-arrow { color: #d5b07a; }
+
+/* ─── Card 2: التربوية — برتقالي رمادي #d5b07a ─── */
+.specialty-hub-card.card-tarbawi {
+  background: #d5b07a;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.card-tarbawi .hub-card-label { color: #1a2e2f; }
+.card-tarbawi h3              { color: #1a2e2f; }
+.card-tarbawi p               { color: #4a3820; }
+
+.card-tarbawi .hub-card-tags span {
+  background: rgba(26,46,47,0.12);
+  color: #1a2e2f;
+  border: 1px solid rgba(26,46,47,0.18);
+}
+
+.card-tarbawi .hub-card-arrow { color: #1a2e2f; }
+
+/* ─── Card 3: علوم الإنسان — تركواز داكن #1e3b40 ─── */
+.specialty-hub-card.card-human {
+  background: #1e3b40;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.card-human .hub-card-label { color: #d2dad3; }
+.card-human h3              { color: #f0ede8; }
+.card-human p               { color: #8fb0a8; }
+
+.card-human .hub-card-tags span {
+  background: rgba(210,218,211,0.12);
+  color: #d2dad3;
+  border: 1px solid rgba(210,218,211,0.2);
+}
+
+.card-human .hub-card-arrow { color: #d2dad3; }
+
+/* ─── Shared label / title / body ─── */
+.hub-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.specialty-hub-card h3 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+
+.specialty-hub-card p {
+  font-size: 15px;
+  line-height: 1.85;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.hub-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 28px;
+}
+
+.hub-card-tags span {
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.hub-card-arrow {
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-block;
+  transition: transform 0.3s;
+  margin-top: auto;
+}
+
+.specialty-hub-card:hover .hub-card-arrow {
+  transform: translateX(-6px);
+}
+
+@media (max-width: 1024px) {
+  .specialty-hub-grid { grid-template-columns: 1fr; }
+}
+
+/* ========================= */
+/* Specialty Sub-Pages       */
+/* ========================= */
+
+.sub-hero {
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  padding-top: 90px;
+  color: white;
+  text-align: center;
+}
+
+/* مكة: خلفية صورة + طبقة #132222 */
+.sub-hero.makkah-hero {
+  background:
+    linear-gradient(rgba(19,34,34,0.72), rgba(19,34,34,0.80)),
+    url('imges/pic1.png') center/cover;
+}
+
+/* التربوية: تدرج navy → teal-dark */
+.sub-hero.tarbawi-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--teal-dark) 100%);
+}
+
+/* علوم الإنسان: تدرج sage → dark */
+.sub-hero.human-hero {
+  background: linear-gradient(135deg, var(--sage) 0%, var(--dark) 100%);
+}
+
+.sub-hero-content { width: 100%; }
+
+.sub-hero-label {
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.makkah-hero .sub-hero-label { color: var(--gold); }
+.tarbawi-hero .sub-hero-label { color: var(--mint); }
+.human-hero .sub-hero-label   { color: var(--cream); }
+
+.sub-hero h1 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.sub-hero p {
+  font-size: 19px;
+  color: rgba(255,255,255,0.82);
+  width: 65%;
+  margin: auto;
+  line-height: 1.85;
+}
+
+/* ========================= */
+/* Layers (Makkah)           */
+/* ========================= */
+
+.layers-section {
+  background: var(--dark);
+  padding: 100px 0;
+  color: white;
+}
+
+.layers-section .section-title  { color: white; }
+.layers-section .section-subtitle { color: #9faaa5; }
+
+.layers-grid-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.layers-grid-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.layer-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 20px;
+  padding: 34px;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.layer-card:hover {
+  background: rgba(213,176,122,0.06);
+  border-color: rgba(213,176,122,0.25);
+  transform: translateY(-4px);
+}
+
+.layer-tier {
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.layer-card h3 {
+  font-size: 22px;
+  color: #f0ede8;
+  margin-bottom: 10px;
+}
+
+.layer-card p {
+  color: #8fa09a;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* ========================= */
+/* Makkah Initiatives        */
+/* ========================= */
+
+.initiatives-makkah {
+  background: var(--light);
+  padding: 100px 0;
+}
+
+.initiatives-makkah .section-title  { color: var(--dark); }
+.initiatives-makkah .section-subtitle { color: var(--slate); }
+
+.category-label {
+  font-size: 12px;
+  color: var(--sage);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--mint);
+  padding-bottom: 12px;
+}
+
+.makkah-init-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.makkah-init-card {
+  background: var(--dark);
+  border-radius: 18px;
+  padding: 30px;
+  color: white;
+  transition: transform 0.3s;
+}
+
+.makkah-init-card:hover { transform: translateY(-4px); }
+
+.makkah-init-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: #f0ede8;
+}
+
+.makkah-init-card p {
+  font-size: 14px;
+  color: #8fa09a;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.init-badge {
+  display: inline-block;
+  background: rgba(213,176,122,0.14);
+  color: var(--gold);
+  font-size: 12px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(213,176,122,0.28);
+}
+
+.makkah-init-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ========================= */
+/* Paths (Tarbawi / Human)   */
+/* ========================= */
+
+.paths-section {
+  background: var(--light);
+  padding: 100px 0;
+}
+
+.paths-section.tarbawi-paths { background: var(--light); }
+.paths-section.human-paths   { background: var(--light); }
+
+.paths-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Tarbawi path cards: navy bg */
+.tarbawi-paths .path-card {
+  background: var(--navy);
+  border: none;
+  color: white;
+}
+
+.tarbawi-paths .path-number { color: rgba(210,218,211,0.25); }
+.tarbawi-paths .path-card h3 { color: var(--mint); }
+.tarbawi-paths .path-card p  { color: #8fa5a0; }
+
+/* Human path cards: white bg sage accent */
+.human-paths .path-card {
+  background: white;
+  border: 1px solid #d8d5cf;
+}
+
+.human-paths .path-number { color: rgba(91,103,96,0.18); }
+.human-paths .path-card h3 { color: var(--sage); }
+.human-paths .path-card p  { color: #6b7370; }
+
+.path-card {
+  border-radius: 20px;
+  padding: 40px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.path-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.1);
+}
+
+.path-number {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.path-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.path-card p {
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* ========================= */
+/* Books (Tarbawi)           */
+/* ========================= */
+
+.books-section {
+  background: white;
+  padding: 100px 0;
+}
+
+.books-section .section-title  { color: var(--dark); }
+.books-section .section-subtitle { color: var(--slate); }
+
+.books-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.book-card {
+  background: var(--light);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  border: 1px solid #dedad4;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+}
+
+.book-cover {
+  width: 86px;
+  min-width: 86px;
+  height: 114px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.14);
+}
+
+.book-cover-placeholder {
+  width: 86px;
+  min-width: 86px;
+  height: 114px;
+  border-radius: 8px;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.book-info h3 {
+  font-size: 20px;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+.book-info p {
+  color: #6b7370;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+/* ========================= */
+/* Academies (Human)         */
+/* ========================= */
+
+.academies-section {
+  background: white;
+  padding: 100px 0;
+}
+
+.academies-section .section-title  { color: var(--dark); }
+.academies-section .section-subtitle { color: var(--slate); }
+
+.academies-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* Alternating: dark + sage */
+.academy-card {
+  border-radius: 20px;
+  padding: 40px;
+  transition: transform 0.3s;
+}
+
+.academy-card:hover { transform: translateY(-5px); }
+
+.academy-card.card-dark {
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.academy-card.card-dark h3 { color: var(--gold); }
+.academy-card.card-dark p  { color: #8fa09a; }
+
+.academy-card.card-sage {
+  background: var(--sage);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.academy-card.card-sage h3 { color: var(--cream); }
+.academy-card.card-sage p  { color: rgba(255,255,255,0.72); }
+
+.academy-card h3 {
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.academy-card p {
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* ========================= */
+/* Sub-page footer           */
+/* ========================= */
+
+.sub-footer {
+  background: var(--dark);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.sub-footer a {
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.sub-footer a:hover { opacity: 0.75; }
+
+/* Responsive sub-pages */
+@media (max-width: 992px) {
+  .layers-grid-top, .layers-grid-bottom,
+  .makkah-init-grid, .makkah-init-grid-2,
+  .paths-grid, .books-grid, .academies-grid {
+    grid-template-columns: 1fr;
+  }
+  .sub-hero h1 { font-size: 38px; }
+  .sub-hero p  { width: 100%; }
 }
